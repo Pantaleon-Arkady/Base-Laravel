@@ -8,6 +8,7 @@ services:
       - ./laravel:/var/www
     depends_on:
       - node
+      - postgres
 
   nginx:
     image: nginx:alpine
@@ -29,3 +30,18 @@ services:
     ports:
       - "5173:5173"
     command: sh -c "npm run dev -- --host"
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: base_laravel_db
+    environment:
+      POSTGRES_DB: base_laravel
+      POSTGRES_USER: base_laravel_user
+      POSTGRES_PASSWORD: base_secret
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
