@@ -6,7 +6,7 @@
     </head>
     <body>
         
-        @include('partials.header')
+        <x-header />
 
         <main>
             @yield('content')
