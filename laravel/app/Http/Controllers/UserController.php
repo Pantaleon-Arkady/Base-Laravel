@@ -10,6 +10,28 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function login(Request $request)
+    {
+        $credentials = $request->validate([
+            'namemail' => 'required|string',
+            'password' => 'required'
+        ]);
+
+        $login = $credentials['namemail'];
+
+        $field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
+
+        if (!Auth::attempt([$field => $login, 'password' => $credentials['password']])) {
+            return back()->withErrors([
+                'login' => 'Invalid credentials'
+            ]);
+        }
+
+        $request->session()->regenerate();
+
+        return redirect('/home');
+    }
+
     public function register(Request $request)
     {
         $validated = $request->validate([
@@ -26,6 +48,6 @@ class UserController extends Controller
 
         Auth::login($user);
 
-        return redirect('/');
+        return redirect('/home');
     }
 }
