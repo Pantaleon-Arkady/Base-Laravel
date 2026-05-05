@@ -9,5 +9,6 @@
     </head>
     <body>
         <button class="btn btn-primary">Test Button</button>
+        <a href="/home" class="btn btn-success">Home</a>
     </body>
 </html>
