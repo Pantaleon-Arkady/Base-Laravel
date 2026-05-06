@@ -12,7 +12,7 @@
         @endauth
 
         @guest
-            <a class="btn btn-success" href="/signup">
+            <a class="btn btn-success" href="/signup/login">
                 Sign in
             </a>
         @endguest

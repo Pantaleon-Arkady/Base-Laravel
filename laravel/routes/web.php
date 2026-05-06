@@ -2,7 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Models\User;
+use App\Http\Controllers\PagesController;
+
+// Pages
+
+Route::get('/signup/login', [PagesController::class, 'login']);
+Route::get('/signup/register', [PagesController::class, 'register']);
+
+// User
 
 Route::get('/logout', [UserController::class, 'logout']);
 Route::post('/login', [UserController::class, 'login']);
