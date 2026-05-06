@@ -10,6 +10,6 @@
     <body>
         <button class="btn btn-secondary">Test Button</button>
         <a href="/home" class="btn btn-primary">Home</a>
-        <a href="/signup" class="btn btn-success">Signup</a>
+        <a href="/signup/login" class="btn btn-success">Signup</a>
     </body>
 </html>
