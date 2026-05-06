@@ -6,7 +6,7 @@
     </head>
     <body>
         
-        <x-header />
+        <x-header :homePage="!request()->is('signup')"/>
 
         <main>
             @yield('content')
