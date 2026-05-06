@@ -6,7 +6,7 @@
 
     <div class="bg-success">
 
-        @if ($setLogin)
+        @if ($mode === 'login')
 
             <form class="d-flex flex-column" method="POST" action="/login">
                 <div>Login</div>
@@ -17,6 +17,12 @@
                 <button>Login</button>
             </form>
         
+            <div class="bg-light">
+                <span>Don't have an account yet?</span>
+                <a href="/signup/register" class="btn btn-success">
+                    Register
+                </a>
+            </div>
         @else
 
             <form class="d-flex flex-column" method="POST" action="/register">
@@ -29,12 +35,14 @@
                 <button>Register</button>
             </form>
 
+            <div class="bg-light">
+                <a href="/signup/login" class="btn btn-success">
+                    Log in ?
+                </a>
+            </div>
+
         @endif
 
     </div>
-
-    <button onclick="() => setLogin(false)">
-        Register
-    </button>
 
 @endsection
