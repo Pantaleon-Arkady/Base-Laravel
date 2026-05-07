@@ -7,7 +7,7 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body>
+    <body class="bg-secondary">
         <button class="btn btn-secondary">Test Button</button>
         <a href="/home" class="btn btn-primary">Home</a>
         <a href="/signup/login" class="btn btn-success">Signup</a>

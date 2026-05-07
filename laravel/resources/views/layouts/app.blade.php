@@ -6,7 +6,7 @@
         <title>@yield('title', 'Base Laravel')</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body>
+    <body class="bg-secondary">
         
         <x-header :homePage="!request()->is('signup*')"/>
 
