@@ -4,18 +4,18 @@
     <div class="fw-bold fs-1">Base Laravel</div>
 
     @if ($homePage)
-    
-        @auth
-            <a class="btn btn-danger" href="/logout">
-                Logout
-            </a>
-        @endauth
+        <div>
+            @auth
+                <a class="btn btn-danger" href="/logout">
+                    Logout
+                </a>
+            @endauth
 
-        @guest
-            <a class="btn btn-success" href="/signup/login">
-                Sign in
-            </a>
-        @endguest
-
+            @guest
+                <a class="btn btn-success" href="/signup/login">
+                    Sign in
+                </a>
+            @endguest
+        </div>
     @endif
 </div>

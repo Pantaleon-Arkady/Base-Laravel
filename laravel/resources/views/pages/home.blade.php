@@ -2,14 +2,14 @@
 
 @section('content')
 
-    <div class="bg-success">
+    <div class="home_main_div bg-secondary">
 
         @auth
-            <p>Welcome, {{ auth()->user()->name }}</p>
+            <div class="home_auth_message bg-success text-white">Welcome, {{ auth()->user()->name }}</div>
         @endauth
 
         @guest
-            <p>You are not logged in</p>
+            <div class="home_auth_message bg-warning">You are not logged in</div>
         @endguest
 
     </div> 

@@ -16,7 +16,12 @@
 
 .header_main_div {
     height: var(--header-mobile-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+/* SIGN UP */
 
 .signup_main_div {
     height: calc(100vh - var(--header-mobile-height));
@@ -49,6 +54,22 @@
 .signup_toggle {
     width: 90%;
     text-align: center;
+}
+
+/* HOME */
+
+.home_main_div {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.home_auth_message {
+    margin-top: 10px;
+    width: 80%;
+    padding: 10px 15px;
+    border-radius: 10px;
 }
 
 @media (min-width: 801px) {
