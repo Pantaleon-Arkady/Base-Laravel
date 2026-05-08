@@ -95,6 +95,10 @@
                     <div class="card mb-3">
 
                         <h3>{{ $workout->name }}</h3>
+                        <form method="POST" action="/delete-workout">
+                            <input type="hidden" value="{{ $workout->id }}" name="id" />
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
 
                         @foreach($workout->exercises as $exercise)
 
