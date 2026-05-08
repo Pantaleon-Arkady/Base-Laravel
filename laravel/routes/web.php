@@ -11,6 +11,7 @@ Route::post('/create-workout', [WorkoutController::class, 'createWOrkout']);
 
 // Pages
 
+Route::get('/home', [PagesController::class, 'home']);
 Route::get('/signup/login', [PagesController::class, 'login']);
 Route::get('/signup/register', [PagesController::class, 'register']);
 
@@ -22,10 +23,6 @@ Route::post('/register', [UserController::class, 'register']);
 
 Route::get('/signup', function() {
     return view('pages.signup');
-});
-
-Route::get('/home', function () {
-    return view('pages.home');
 });
 
 Route::get('/', function () {
