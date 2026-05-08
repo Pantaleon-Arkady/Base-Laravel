@@ -27,6 +27,12 @@ window.workoutForm = function () {
                 weight: '',
                 duration: ''
             })
+        },
+
+        deleteExercise(index) {
+            if (this.exercises.length === 1) return
+
+            this.exercises.splice(index, 1)
         }
     }
 }

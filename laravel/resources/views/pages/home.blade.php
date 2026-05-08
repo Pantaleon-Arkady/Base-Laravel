@@ -18,6 +18,10 @@
                     <template x-for="(exercise, index) in exercises" :key="index">
 
                         <div>
+                            <button @click="deleteExercise(index)">
+                                Delete Exercise Field
+                            </button>
+
                             <div>
                                 Exercise:
                                 <input 
