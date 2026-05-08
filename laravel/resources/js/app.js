@@ -7,6 +7,33 @@ window.Alpine = Alpine
 window.workoutForm = function () {
     return {
         workout: '',
+
+        exerciseTypesConfig: {
+            bodyweight: {
+                reps: true,
+                weight: false,
+                duration: false,
+            },
+
+            weightlift: {
+                reps: true,
+                weight: true,
+                duration: false,
+            },
+
+            cardio: {
+                reps: false,
+                weight: false,
+                duration: true,
+            },
+
+            endurance: {
+                reps: false,
+                weight: false,
+                duration: true,
+            }
+        },
+
         exercises: [
             {
                 name: '',

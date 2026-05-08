@@ -53,7 +53,7 @@
                                     type="number"
                                 />
                             </div>
-                            <div>
+                            <div x-show="exerciseTypesConfig[exercise.type].reps">
                                 Reps:
                                 <input 
                                     x-model="exercise.reps"
@@ -61,7 +61,7 @@
                                     type="number"
                                 />
                             </div>
-                            <div>
+                            <div x-show="exerciseTypesConfig[exercise.type].weight">
                                 Weight:
                                 <input 
                                     x-model="exercise.weight"
@@ -69,7 +69,7 @@
                                     type="number"
                                 />
                             </div>
-                            <div>
+                            <div x-show="exerciseTypesConfig[exercise.type].duration">
                                 Duration:
                                 <input 
                                     x-model="exercise.duration"
