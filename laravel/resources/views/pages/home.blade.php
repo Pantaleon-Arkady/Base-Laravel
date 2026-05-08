@@ -9,11 +9,13 @@
 
             <div>
                 Workout Form Div
-                <form x-data="workoutForm()">
+                <form x-data="workoutForm()" method="POST" action="/create-workout">
+                    @csrf
+
                     Workout Form Element
                     <div>
                         Workout:
-                        <input x-model="workout" type="text" placeholder="Workout name..." />
+                        <input x-model="workout" name="workout" type="text" placeholder="Workout name..." />
                     </div>
                     <template x-for="(exercise, index) in exercises" :key="index">
 
