@@ -1,0 +1,42 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Requests\WorkoutRequest;
+use App\Models\Workout;
+
+class WorkoutController extends Controller
+{
+    public function createWorkout(WorkoutRequest $request)
+    {
+        $validated = $request->validated();
+
+        $workout = Workout::create([
+            'name' => $validated['workout'],
+            'user_id' => $request->user()->id
+        ]);
+
+        $this->saveExercises($workout, $validated['exercises']);
+
+        return redirect()
+            ->back()
+            ->with('success', 'Workout saved successfully');
+    }
+
+    private function saveExercises(Workout $workout, array $exercises): void
+    {
+        $mappedExercises = array_map(function ($exercise) {
+            return [
+                'name' => $exercise['name'],
+                'type' => $exercise['type'],
+                'sets' => $exercise['sets'] ?? null,
+                'repetitions' => $exercise['reps'] ?? null,
+                'weight' => $exercise['weight'] ?? null,
+                'duration' => $exercise['duration'] ?? null,
+            ];
+        }, $exercises);
+
+        $workout->exercises()->createMany($mappedExercises);
+    }
+}
