@@ -5,9 +5,27 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\WorkoutRequest;
 use App\Models\Workout;
+use Illuminate\Support\Facades\Auth;
 
 class WorkoutController extends Controller
 {
+    public function deleteWorkout(Request $request)
+    {
+        $request->validate([
+            'id' => 'required|exists:workouts,id'
+        ]);
+
+        $workout = Workout::find($request->id);
+
+        if (Auth::id() !== $workout->user_id) {
+            return response()->json(['message' => 'Unauthorized'], 403);
+        }
+
+        $workout->delete();
+
+        return redirect('/home');
+    }
+
     public function createWorkout(WorkoutRequest $request)
     {
         $validated = $request->validated();
