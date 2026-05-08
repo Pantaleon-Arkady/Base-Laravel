@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\WorkoutController;
+
+// Workout
+
+Route::post('/create-workout', [WorkoutController::class, 'createWOrkout']);
 
 // Pages
 
