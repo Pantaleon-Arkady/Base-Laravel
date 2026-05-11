@@ -12,6 +12,7 @@ Route::post('/create-workout', [WorkoutController::class, 'createWorkout']);
 
 // Pages
 
+Route::post('/edit-workout', [PagesController::class, 'editWorkout']);
 Route::get('/home', [PagesController::class, 'home']);
 Route::get('/signup/login', [PagesController::class, 'login']);
 Route::get('/signup/register', [PagesController::class, 'register']);

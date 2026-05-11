@@ -99,6 +99,10 @@
                             <input type="hidden" value="{{ $workout->id }}" name="id" />
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </form>
+                        <form method="POST" action="/edit-workout">
+                            <input type="hidden" value="{{ $workout->id }}" name="id" />
+                            <button type="submit" class="btn btn-primary">Edit</button>
+                        </form>
 
                         @foreach($workout->exercises as $exercise)
 
