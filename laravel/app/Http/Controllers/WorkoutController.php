@@ -9,6 +9,27 @@ use Illuminate\Support\Facades\Auth;
 
 class WorkoutController extends Controller
 {
+    public function updateWorkout(WorkoutRequest $request)
+    {
+        $validated = $request->validated();
+
+        $workout = Workout::find($validated['id']);
+
+        if (Auth::id() !== $workout->user_id) {
+            return response()->json(['message' => 'Unauthorized'], 403);
+        }
+
+        $workout->update([
+            'name' => $validated['workout']
+        ]);
+
+        $workout->exercises()->delete();
+
+        $this->saveExercises($workout, $validated['exercises']);
+
+        return redirect('/home');
+    }
+
     public function deleteWorkout(Request $request)
     {
         $request->validate([
