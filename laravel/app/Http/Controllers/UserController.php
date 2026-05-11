@@ -7,6 +7,8 @@ use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Password;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Mail\RegistrationMail;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -55,6 +57,9 @@ class UserController extends Controller
             'email' => $validated['email'],
             'password' => bcrypt($validated['password']),
         ]);
+
+        Mail::to($user->email)
+            ->send(new RegistrationMail($user->name));
 
         Auth::login($user);
 
