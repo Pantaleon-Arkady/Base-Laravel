@@ -7,6 +7,7 @@ use App\Http\Controllers\WorkoutController;
 
 // Workout
 
+Route::post('/update-workout', [WorkoutController::class, 'updateWorkout']);
 Route::post('/delete-workout', [WorkoutController::class, 'deleteWorkout']);
 Route::post('/create-workout', [WorkoutController::class, 'createWorkout']);
 

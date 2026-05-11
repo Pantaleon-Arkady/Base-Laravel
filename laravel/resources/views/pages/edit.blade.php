@@ -12,6 +12,7 @@
             action="/update-workout"
         >
             @csrf
+            <input type="hidden" value="{{ $workout->id }}" name="id" />
 
             Workout Form Element
             <div>
