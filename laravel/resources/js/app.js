@@ -4,9 +4,9 @@ import Alpine from 'alpinejs'
 
 window.Alpine = Alpine
 
-window.workoutForm = function () {
+window.workoutForm = function (data = {}) {
     return {
-        workout: '',
+        workout: data.workout || '',
 
         exerciseTypesConfig: {
             bodyweight: {
@@ -34,7 +34,7 @@ window.workoutForm = function () {
             }
         },
 
-        exercises: [
+        exercises: data.exercises || [
             {
                 name: '',
                 type: 'bodyweight',
