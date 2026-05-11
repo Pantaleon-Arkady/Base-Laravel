@@ -7,6 +7,22 @@ use App\Models\Workout;
 
 class PagesController extends Controller
 {
+    public function editWorkout(Request $request)
+    {
+        $validated = $request->validate([
+            'id' => 'required|integer'
+        ]);
+
+        $workout = Workout::with('exercises')
+            ->where('id', $validated['id'])
+            ->where('user_id', $request->user()->id)
+            ->first();
+
+        return view('pages.edit', [
+            'workout' => $workout
+        ]);
+    }
+
     public function home(Request $request)
     {
         $workouts = Workout::with('exercises')
