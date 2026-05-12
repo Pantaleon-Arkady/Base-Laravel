@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Workout;
+use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
@@ -25,10 +26,14 @@ class PagesController extends Controller
 
     public function home(Request $request)
     {
-        $workouts = Workout::with('exercises')
+        $workouts = [];
+
+        if (Auth::id()) {
+            $workouts = Workout::with('exercises')
             ->where('user_id', $request->user()->id)
             ->latest()
             ->get();
+        }
 
         return view('pages.home', [
             'workouts' => $workouts
