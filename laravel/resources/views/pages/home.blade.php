@@ -92,17 +92,9 @@
                 <div class="workout_content_div">
                     @foreach($workouts as $workout)
 
-                    <div class="card mb-3">
+                    <div class="each_workout_card mb-3">
 
                         <h3>{{ $workout->name }}</h3>
-                        <form method="POST" action="/delete-workout">
-                            <input type="hidden" value="{{ $workout->id }}" name="id" />
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
-                        <form method="POST" action="/edit-workout">
-                            <input type="hidden" value="{{ $workout->id }}" name="id" />
-                            <button type="submit" class="btn btn-primary">Edit</button>
-                        </form>
 
                         @foreach($workout->exercises as $exercise)
 
@@ -111,6 +103,17 @@
                             </div>
 
                         @endforeach
+
+                        <div class="each_workout_mod">
+                            <form method="POST" action="/edit-workout">
+                                <input type="hidden" value="{{ $workout->id }}" name="id" />
+                                <button type="submit" class="btn btn-primary">Edit</button>
+                            </form>
+                            <form method="POST" action="/delete-workout">
+                                <input type="hidden" value="{{ $workout->id }}" name="id" />
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
 
                     </div>
 

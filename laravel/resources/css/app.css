@@ -87,6 +87,21 @@
     width: 90%;
 }
 
+.each_workout_card {
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 7px 10px rgb(50, 50, 50);
+}
+
+.each_workout_mod {
+    padding: 10px 0px;
+    border-top: 1px solid gray;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+}
+
 @media (min-width: 801px) {
 
     .header_main_div {
