@@ -7,7 +7,9 @@
     <div class="signup_main_div bg-secondary border border-2 border-black">
 
         <div class="d-none d-md-flex signup_banner_div">
-            Left sign up
+            <h1 class="banner_element bg-black border text-white px-5 py-3 rounded">
+                App Banner
+            </h1>
         </div>
         <div class="sign_up_content_div">
             @if ($mode === 'login')
@@ -29,7 +31,7 @@
                         </a>
                     </div>
                 </div>
-                
+
             @else
 
                 <div class="signup_content_wrapper">

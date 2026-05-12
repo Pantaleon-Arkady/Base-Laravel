@@ -123,6 +123,13 @@
 
     .signup_banner_div {
         width: 40%;
+        flex-flow: row;
+        justify-content: end;
+        align-items: center;
+    }
+
+    .banner_element {
+        margin-right: 20px;
     }
 
     .sign_up_content_div {
