@@ -25,6 +25,13 @@
 
 .signup_main_div {
     height: calc(100vh - var(--header-mobile-height));
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+}
+
+.sign_up_content_div {
+    width: 100%;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -37,6 +44,12 @@
     padding: 25px 15px;
     border-radius: 5px;
     background-color: rgb(200, 200, 200);
+}
+
+.signup_content_wrapper {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
 }
 
 .signup_forms_header {
@@ -106,6 +119,23 @@
 
     .header_main_div {
         height: var(--header-desktop-height);
+    }
+
+    .signup_banner_div {
+        width: 40%;
+    }
+
+    .sign_up_content_div {
+        border-left: 1px solid white;
+        width: 60%;
+        justify-content: center;
+        align-items: start;
+    }
+
+    .signup_content_wrapper {
+        margin-left: 10px;
+        width: 70%;
+        margin-bottom: var(--header-desktop-height);
     }
 
 }
