@@ -59,6 +59,7 @@
 /* HOME */
 
 .home_main_div {
+    width: 100%;
     display: flex;
     flex-flow: column;
     justify-content: space-around;
@@ -70,6 +71,20 @@
     width: 80%;
     padding: 10px 15px;
     border-radius: 10px;
+    border: 2px solid white;
+    margin-bottom: 15px;
+}
+
+.homepage_content_div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* WORKOUT */
+
+.workout_content_div {
+    width: 90%;
 }
 
 @media (min-width: 801px) {

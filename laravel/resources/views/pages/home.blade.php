@@ -7,8 +7,8 @@
         @auth
             <div class="home_auth_message bg-success text-white">Welcome, {{ auth()->user()->name }}</div>
 
-            <div class="d-flex flex-row w-100">
-                <div class="w-50 border">
+            <div class="homepage_content_div">
+                <div class="d-none d-md-block border">
                     Workout Form Div
                     <form x-data="workoutForm()" method="POST" action="/create-workout">
                         @csrf
@@ -89,7 +89,7 @@
                     </form>
                 </div>
 
-                <div class="w-50 border">
+                <div class="workout_content_div">
                     @foreach($workouts as $workout)
 
                     <div class="card mb-3">
